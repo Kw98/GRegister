@@ -89,8 +89,8 @@ namespace g_reg {
 			}
 
 			template<typename ...T>
-			std::tuple<T &...>	view(const std::size_t id) {
-				return std::tuple<T &...>{get<T>(id)...};
+			std::tuple<T ...>	view(const std::size_t id) {
+				return std::tuple<T ...>{get<T>(id)...};
 			}
 
 			template<typename ...T>
@@ -134,8 +134,8 @@ namespace g_reg {
 
 
 			std::size_t				_max;
-			g_reg::IdManager			_gid;
-			std::set<std::size_t>		_reg;
+			g_reg::IdManager		_gid;
+			std::set<std::size_t>	_reg;
 			components_pool			_pool;
 	}; // GRegister
 

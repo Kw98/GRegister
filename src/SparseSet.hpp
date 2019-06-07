@@ -243,7 +243,7 @@ namespace sparset_collection {
 
 			sparset_collection::SparseSet<T>::Iterator begin() { return sparset_collection::SparseSet<T>::Iterator{_dense, 0}; }
 			sparset_collection::SparseSet<T>::Iterator end() { return sparset_collection::SparseSet<T>::Iterator{_dense, parent::size()}; }
-			sparset_collection::SparseSet<T>::Iterator &find(const std::size_t &ind) const {
+			sparset_collection::SparseSet<T>::Iterator find(const std::size_t &ind) const {
 				std::size_t	pos = (parent::has(ind) ? parent::pos(ind) : parent::size());
 				return sparset_collection::SparseSet<T>::Iterator{&_dense, pos};
 			}
